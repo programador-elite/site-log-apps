@@ -17,6 +17,11 @@ body {
     
 }
 
+ @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
+
 /* Estilo da barra lateral */
 .sidebar {
     width: 250px;
