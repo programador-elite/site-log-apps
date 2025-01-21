@@ -1,0 +1,379 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe toda a altura da tela */
+    background-image: url('https://wallpapers.com/images/hd/4k-oled-background-qdvijfjpxohfcw90.jpg');
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    
+}
+
+/* Estilo da barra lateral */
+.sidebar {
+    width: 250px;
+    height: 100vh; /* Estender até o fim da tela */
+    background-color: #333; /* Cor de fundo do menu */
+    color: #ffffff;
+    padding: 20px; /* Aumentando o padding */
+    transition: transform 0.3s ease; /* Transição suave */
+    position: fixed; /* Fixo na tela */
+    left: 0; /* Fixo à esquerda */
+    top: 0; /* Fixo ao topo */
+    z-index: 999; /* Para garantir que fique acima de outros elementos */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Sombra para a barra lateral */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
+    font-size: large;
+    font-style: initial;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%); /* Esconder o menu */
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 1.8em; /* Tamanho da fonte do título */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 30px; /* Bordas arredondadas */
+    transition: background 0.3s, transform 0.3s; /* Transição suave para hover */
+}
+
+.sidebar ul li a:hover {
+    background-color: #555; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+}
+
+/* Estilo do botão do menu */
+#toggleMenu {
+    background-color: #333; /* Cor de fundo do botão */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 50px; /* Largura reduzida */
+    height: 50px; /* Altura reduzida */
+    text-align: center;
+    font-size: 24px; /* Tamanho do ícone */
+    position: fixed; /* Fixo na tela */
+    top: 10px; /* Distância do topo */
+    left: 10px; /* Distância da esquerda */
+    z-index: 1000; /* Para garantir que fique acima de outros elementos */
+    border-radius: 50%; /* Formato redondo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para o botão */
+    transition: background 0.3s; /* Transição suave para hover */
+}
+
+#toggleMenu:hover {
+    background-color: #444; /* Cor ao passar o mouse */
+}
+
+#botaoInvisivel {
+    background-color: #333; /* Cor de fundo do botão */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: inline-block;
+    width: 50px; /* Largura reduzida */
+    height: 50px; /* Altura reduzida */
+    text-align: center;
+    font-size: 24px; /* Tamanho do ícone */
+    position: fixed; /* Fixo na tela */
+    top: 10px; /* Distância do topo */
+    left: 70px; /* Distância da esquerda */
+    z-index: 1000; /* Para garantir que fique acima de outros elementos */
+    border-radius: 50%; /* Formato redondo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para o botão */
+    transition: background 0.3s; /* Transição suave para hover */
+}
+
+#botaoInvisivel:hover {
+    background-color: #444; /* Cor ao passar o mouse */
+}
+
+/* Estilo do conteúdo */
+.content {
+    background-color: #000000;
+    padding: 20px;
+    margin: 70px 50px 0; /* Ajustando a margem para centralizar o conteúdo */
+    border-radius: 10px; /* Bordas arredondadas */
+    color: #2c3e50; /* Cor do texto */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para o conteúdo */
+    text-align: center; /* Centraliza o texto */
+}
+
+h1 {
+    color: #fffefe; /* Cor do título */
+    margin-bottom: 20px; /* Aumentando a margem inferior */
+}
+
+p {
+    margin: 15px 50px; /* Margem à esquerda e à direita */
+    line-height: 1.3; /* Aumentando o espaçamento entre linhas */
+    font-size: 1.1em; /* Tamanho da fonte dos parágrafos */
+    color: #ffffff; /* Cor do texto dos parágrafos */
+    background-color: transparent;
+}
+
+#finalizar {
+    margin: 15px 50px; /* Margem à esquerda e à direita */
+    line-height: 1.3; /* Aumentando o espaçamento entre linhas */
+    font-size: 1.1em; /* Tamanho da fonte dos parágrafos */
+    color: #ffffff; /* Cor do texto dos parágrafos */
+    opacity: 0.5; /* Ajusta a opacidade para 50% */
+    font-style: italic; /* Define o texto como itálico */
+}
+
+/* Estilo do footer */
+footer {
+    text-align: center;
+    color: #ffffff; /* Cor do texto do footer */
+}
+
+/* Estilo da sobreposição */
+.overlay {
+    position: fixed; /* Fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    z-index: 998; /* Abaixo do menu, mas acima do conteúdo */
+    display: none; /* Inicialmente escondido */
+}
+
+.overlay.visible {
+    display: block; /* Mostrar quando o menu estiver aberto */
+}
+
+/* Estilo dos ícones de redes sociais */
+.social-icons {
+    position: fixed; /* Fixo na tela */
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância da direita */
+    z-index: 1000; /* Para garantir que fique acima de outros elementos */
+    display: flex; /* Para alinhar os ícones horizontalmente */
+}
+
+.social-icons img {
+    width: 50px; /* Aumentando o tamanho das logos */
+    height: 50px; /* Aumentando o tamanho das logos */
+    margin-left: 10px; /* Espaçamento entre os ícones */
+    transition: transform 0.3s; /* Transição suave para hover */
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Efeito de aumento ao passar o mouse */
+}
+
+/* Estilo do conteúdo */
+.contenter {
+    text-align: center; /* Centraliza o texto */
+    margin: 20px 0; /* Margem superior e inferior */
+}
+
+.container {
+    flex: 1 1 20%;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: center;
+    flex: 1; /* Faz com que o container ocupe o espaço restante */
+    justify-content: center;
+    align-items: center;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center; /* Centraliza os produtos */
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que os produtos se movam para a próxima linha */
+    margin-top: 10px;
+}
+
+.card {
+    flex: 1 1 300%; /* Ajusta a largura dos cards para 2 produtos por linha */
+    padding: 20px;
+    margin-top: 10px;
+    width: 450px; /* Largura fixa para os cards */
+    text-align: center; /* Centraliza o texto dentro do card */
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: black;
+    border: none;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.card .price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card .discount {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.card .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.card li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.card li::before {
+    content: '✦';
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+/* Estilo do botão personalizado */
+.custom-button {
+    background-color: #333; /* Cor de fundo verde */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 15px 20px; /* Espaçamento interno */
+    margin-top: 10px;
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove o sublinhado */
+    display: inline-block; /* Permite definir largura e altura */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    border-radius: 2000px; /* Bordas arredondadas */
+    transition: background-color 0.3s, transform 0.2s; /* Transições suaves */
+}
+
+.custom-button:hover {
+    background-color: #222; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.1); /* Aumenta ligeiramente o botão */
+}
+
+.custom-button:active {
+    background-color: #222; /* Cor de fundo ao clicar */
+    transform: scale(0.95); /* Diminui ligeiramente o botão */
+}
+
+/* Estilo da barra superior */
+.top-bar {
+    display: flex;
+    justify-content: center; /* Centraliza os botões */
+    padding: 40px;
+    margin-bottom: 0%;
+}
+
+.top-bar button {
+    background: #333; /* Cor de fundo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px; /* Bordas arredondadas */
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 25px; /* Aumenta o espaçamento entre os botões */
+    transition: background 0.3s, transform 0.2s; /* Transições suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.top-bar button:hover {
+    background: #555; /* Cor de fundo ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação */
+}
+
+/* Estilo da lista de produtos */
+.product-list {
+    display: flex;
+    justify-content: center; /* Centraliza os produtos */
+    flex-wrap: wrap; /* Permite que os produtos se movam para a próxima linha */
+}
+
+.card {
+    flex: 1 1 25%; /* Ajusta a largura dos cards */
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da barra de progresso */
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+.progress-bar .progress-fill {
+    width: 50%;
+    height: 100%;
+    background-color: #8a55d9;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Estilo do botão de plano */
+.plan-button {
+    background: #333; /* Cor de fundo */
+    color: white;
+    border: none;
+    padding: 0px 0px;
+    border-radius: 30px; /* Bordas arredondadas */
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 30px; /* Aumenta o espaçamento entre os botões */
+    transition: background 0.3s, transform 0.2s; /* Transições suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    margin-top: 0px;
+}
+
+.plan-button:hover {
+    background: #555; /* Cor de fundo ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação */
+}
+

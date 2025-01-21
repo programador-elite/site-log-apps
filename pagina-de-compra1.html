@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Finalizar Compra</title>
+</head>
+<body>
+    <button id="botaoInvisivel" class="custon-button" onclick="handleSelect('sites.html')">⇽</button> 
+    <button id="toggleMenu" onclick="tornarInvisivel()">☰</button> <!-- Botão de três barrinhas para abrir o menu -->
+
+    <div class="sidebar hidden"> <!-- Adicionando a classe hidden inicialmente -->
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sites.html">Sites</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </div>
+    <div class="overlay"></div>
+    <header class="contenter">
+    </header>
+    
+    <div class="container">
+        <div id="monthlyProducts" class="product-list">
+            <div class="card"> 
+                <h2>Site Básico Mensal</h2>
+                <div class="discount">35% de desconto</div>
+                <h3>R$ 69,00/Mês</h3>
+                <p>"Site Básico Mensal."</p>
+                <ul class="features">
+                    <li><i class="fa fa-check"></i> 1 site</li>
+                    <li><i class="fa fa-check"></i> Acessos Ilimitado</li>
+                    <li><i class="fa fa-check"></i> 100% de personalização</li>
+                    <li><i class="fa fa-check"></i> 5 funções exclusivas</li>
+                    <li><i class="fa fa-check"></i> Páginas básicas</li>
+                    <li><i class="fa fa-check"></i> 3 Páginas adicionais</li>
+                    <li><i class="fa fa-check"></i> Redes sociais</li>
+                    <li><i class="fa fa-check"></i> Alta velocidade de carregamento</li>
+                    <li><i class="fa fa-check"></i> Backup semanal</li>
+                    <li><i class="fa fa-check"></i> Proteção contra vírus</li>
+                    <li><i class="fa fa-check"></i> Atualizações automáticas</li>
+                    <li><i class="fa fa-check"></i> Domínio personalizado</li>
+                    <li><i class="fa fa-check"></i> Proteção CloudFlare</li>
+                    <li><i class="fa fa-minus"></i> Entrega Rápida</li>
+                </ul>
+                <div id="finalizar">"Para finalizar sua compra entre em contato com nossa equipe de suporte."</div>
+                <button class="custom-button" onclick="handleCheckout('mensal basico')">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="social-icons">
+        <a href="https://www.instagram.com/log.sites/?utm_source=ig_web_button_share_sheet" target="_blank">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVXaKZEhqH0AqhnR79r6We7azwHDN-bSIFZw&s" alt="Instagram">
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Log Sites - Todos os direitos reservados</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        function tornarInvisivel() {
+            document.getElementById("botaoInvisivel").style.display = "none";
+        }
+    </script>
+</body>
+</html>
